@@ -13,10 +13,16 @@ entrada.addEventListener('change',function(){
     elem.append(" "+entrada.value);
     document.querySelector("ul").append(elem);
     entrada.value="";   
-})
+});
 
-let icon = document.querySelectorAll("i");
-icon.addEventListener('click',function(){
-    console.log("funciona");
-})
+let li = document.querySelectorAll("li");
+let icon = document.getElementsByClassName("fa fa-trash");
+for(let i=0;i<icon.length;i++)
+{
+    icon[i].addEventListener("click",function(){
+        let list = document.querySelector("ul");
+        list.removeChild(li[i]);
+    });
+}
 
+;
