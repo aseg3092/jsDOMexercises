@@ -15,14 +15,22 @@ entrada.addEventListener('change',function(){
     entrada.value="";   
 });
 
-let li = document.querySelectorAll("li");
-let icon = document.getElementsByClassName("fa fa-trash");
-for(let i=0;i<icon.length;i++)
-{
-    icon[i].addEventListener("click",function(){
-        let list = document.querySelector("ul");
-        list.removeChild(li[i]);
-    });
-}
+// let li = document.querySelectorAll("li");
+// let icon = document.getElementsByClassName("fa fa-trash");
+// for(let i=0;i<icon.length;i++)
+// {
+//     icon[i].addEventListener("click",function(){
+//         let list = document.querySelector("ul");
+//         list.removeChild(li[i]);
+//     });
+// }
+
+document.addEventListener('click',function(e){
+    if(e.target.className === 'fa fa-trash')
+    {
+        console.log(e);
+        e.target.parentNode.parentNode.remove();
+    }
+})
 
 ;
